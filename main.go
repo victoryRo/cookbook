@@ -1,8 +1,7 @@
 package main
 
-import "book/pkg/samples"
+import "book/pkg/chapter01"
 
 func main() {
-	//chapter01.GetProcessId()
-	samples.ProcessID()
+	chapter01.Execute()
 }

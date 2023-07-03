@@ -1,4 +1,4 @@
-package samples
+package samples1
 
 import (
 	"fmt"
