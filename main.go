@@ -1,7 +1,7 @@
 package main
 
-import "book/pkg/chapter01"
+import "book/pkg/chapter02"
 
 func main() {
-	chapter01.Execute()
+	chapter02.IndentingAText()
 }
