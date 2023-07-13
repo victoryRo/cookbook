@@ -1,8 +1,9 @@
 package main
 
-import "book/pkg/chapter01"
+import (
+	"book/pkg/chapter02"
+)
 
 func main() {
-	// chapter01.CorrectClosure()
-	chapter01.Parameterize()
+	chapter02.FindString()
 }
