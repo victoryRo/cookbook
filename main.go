@@ -1,7 +1,8 @@
 package main
 
-import "book/pkg/chapter02"
+import "book/pkg/chapter01"
 
 func main() {
-	chapter02.IndentingAText()
+	// chapter01.CorrectClosure()
+	chapter01.Parameterize()
 }
