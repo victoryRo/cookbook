@@ -1,9 +1,7 @@
 package main
 
-import (
-	"book/pkg/chapter02"
-)
+import "book/pkg/chapter03"
 
 func main() {
-	chapter02.FindString()
+	chapter03.BigNumber()
 }
