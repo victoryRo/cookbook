@@ -3,5 +3,5 @@ package main
 import "book/pkg/chapter03"
 
 func main() {
-	chapter03.BigNumber()
+	chapter03.RoundNumber()
 }
