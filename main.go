@@ -4,5 +4,5 @@ import "book/pkg/chapter03"
 
 func main() {
 	// chapter03.FormatNumbers()
-	chapter03.Localized()
+	chapter03.NumericalConversion()
 }
