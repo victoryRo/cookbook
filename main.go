@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	chapter03.SpanishForm()
+	chapter03.RandNumber()
 }
