@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	chapter03.RandNumber()
+	chapter03.NumbersComplex()
 }
