@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
-	chapter03.Logarithm()
+	chapter03.CheckSum()
+	// chapter03.ShaPanic()
 }
