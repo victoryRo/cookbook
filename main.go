@@ -5,7 +5,5 @@ import (
 )
 
 func main() {
-	chapter03.DegreesAndRadians()
+	chapter03.Logarithm()
 }
-
-// Taking logarithms
