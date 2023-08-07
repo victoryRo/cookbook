@@ -1,10 +1,10 @@
 package main
 
 import (
-	"book/pkg/chapter03"
+	"book/pkg/chapter04"
 )
 
 func main() {
-	chapter03.CheckSum()
-	// chapter03.ShaPanic()
+	chapter04.CurrentTime()
+	chapter04.TimeString()
 }
