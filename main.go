@@ -5,6 +5,5 @@ import (
 )
 
 func main() {
-	chapter04.CurrentTime()
-	chapter04.TimeString()
+	chapter04.ParsingStringIntoDate()
 }
