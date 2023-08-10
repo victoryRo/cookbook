@@ -5,5 +5,7 @@ import (
 )
 
 func main() {
-	chapter04.ParsingStringIntoDate()
+	chapter04.EpochTime()
 }
+
+// Retrieving time units from the date
