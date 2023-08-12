@@ -30,5 +30,4 @@ func RetrievingTimeUnits() {
 	year := t2.Year()
 
 	fmt.Printf("The %dth day of %v is %v in year %v\n", dOfMonth2, month2, weekDay2, year)
-
 }

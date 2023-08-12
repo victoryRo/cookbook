@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	chapter04.RetrievingTimeUnits()
+	chapter04.DateArithmetics()
 }
