@@ -5,5 +5,7 @@ import (
 )
 
 func main() {
-	chapter04.DateArithmetics()
+	chapter04.DifferenceBetweenTwoDates()
 }
+
+// Converting between time zones
