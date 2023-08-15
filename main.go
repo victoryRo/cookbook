@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	chapter04.DifferenceBetweenTwoDates()
+	chapter04.ConvertingBetweenTimeZones()
 }
 
-// Converting between time zones
+// Running the code block periodically
