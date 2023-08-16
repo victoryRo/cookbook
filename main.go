@@ -5,7 +5,5 @@ import (
 )
 
 func main() {
-	chapter04.ConvertingBetweenTimeZones()
+	chapter04.RunCodePeriodically()
 }
-
-// Running the code block periodically
