@@ -5,5 +5,7 @@ import (
 )
 
 func main() {
-	chapter04.RunCodePeriodically()
+	chapter04.WaitingAmountOfTime()
 }
+
+// Timeout long-running operations
