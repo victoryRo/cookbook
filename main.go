@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	chapter04.LongDurationOperations()
+	chapter04.SerializingTimeAndDate()
 }
