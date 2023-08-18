@@ -1,9 +1,11 @@
 package main
 
 import (
-	"book/pkg/chapter04"
+	"book/pkg/chapter05"
 )
 
 func main() {
-	chapter04.SerializingTimeAndDate()
+	// chapter05.ReadingStandardInput()
+	// chapter05.Scanner()
+	chapter05.Reader()
 }
