@@ -5,7 +5,5 @@ import (
 )
 
 func main() {
-	// chapter05.ReadingStandardInput()
-	// chapter05.Scanner()
-	chapter05.Reader()
+	chapter05.StdOutputError()
 }
