@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	chapter05.StdOutputError()
+	chapter05.OpenMyFile()
 }

@@ -1,1 +1,78 @@
+-------------------------------------------------------------------------------
+Reading the file into a string
 
+        package main
+
+        import "os"
+        import "bufio"
+
+        import "bytes"
+        import "fmt"
+        import "io/ioutil"
+
+        func main() {
+
+          fmt.Println("### Read as reader ###")
+          f, err := os.Open("temp/file.txt")
+          if err != nil {
+            panic(err)
+          }
+          defer f.Close()
+
+          // Read the
+          // file with reader
+          wr := bytes.Buffer{}
+          sc := bufio.NewScanner(f)
+          for sc.Scan() {
+            wr.WriteString(sc.Text())
+          }
+          fmt.Println(wr.String())
+
+          fmt.Println("### ReadFile ###")
+          // for smaller files
+          fContent, err := ioutil.ReadFile("temp/file.txt")
+          if err != nil {
+            panic(err)
+          }
+          fmt.Println(string(fContent))
+
+        }
+
+---------------------------------------------------------------------------
+Reading/writing a different charset
+
+        package main
+
+        import (
+          "fmt"
+          "io/ioutil"
+          "os"
+
+          "golang.org/x/text/encoding/charmap"
+        )
+
+        func main() {
+
+          // Write the string
+          // encoded to Windows-1252
+          encoder := charmap.Windows1252.NewEncoder()
+          s, e := encoder.String("This is sample text with runes Š")
+          if e != nil {
+            panic(e)
+          }
+          ioutil.WriteFile("example.txt", []byte(s), os.ModePerm)
+
+          // Decode to UTF-8
+          f, e := os.Open("example.txt")
+          if e != nil {
+            panic(e)
+          }
+          defer f.Close()
+          decoder := charmap.Windows1252.NewDecoder()
+          reader := decoder.Reader(f)
+          b, err := ioutil.ReadAll(reader)
+          if err != nil {
+            panic(err)
+          }
+          fmt.Println(string(b))
+        }
