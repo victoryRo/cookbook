@@ -1,9 +1,9 @@
 package main
 
 import (
-	"book/pkg/chapter05"
+	"book/pkg/chapter01"
 )
 
 func main() {
-	chapter05.OpenMyFile()
+	chapter01.CorrectClosure()
 }

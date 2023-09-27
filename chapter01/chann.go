@@ -12,55 +12,57 @@ import (
 
 var writer *os.File
 
-// CorrectClosure ...
+// CorrectClosure ... study
 func CorrectClosure() {
 
-	// The file is opened as
-	// a log file to write into.
-	// This way we represent the resources
-	// allocation.
+	// El archivo se abre como un archivo de registro para escribir
+	// De esta manera representamos los recursos
 	var err error
 	writer, err = os.OpenFile(fmt.Sprintf("test_%d.log", time.Now().Unix()), os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		panic(err)
 	}
 
-	// The code is running in a goroutine
-	// independently. So in case the program is
-	// terminated from outside, we need to
-	// let the goroutine know via the closeChan
+	// El código se ejecuta en una rutina de forma independiente. Entonces, en caso de que el programa sea
+	// terminado desde afuera, necesitamos avisar a la gorutina a través de closeChan
 	closeChan := make(chan bool)
+
 	go func() {
+		// bucle for infinito
 		for {
+			// por cada iteracion el bucle espera un segundo
 			time.Sleep(time.Second)
+
 			select {
+			// el canal por default es false cuando enviamos true se termina la go rutina y salimos del bucle
 			case <-closeChan:
 				log.Println("Goroutine closing")
 				return
 			default:
+				// mientras el canal sea falso retornara este mensaje por default en consola
 				log.Println("Writing to log")
+				// y escribira en el archivo el registro con la hora actual
 				_, err := io.WriteString(writer, fmt.Sprintf("Logging access %s\n", time.Now().String()))
 				if err != nil {
 					panic(err)
 				}
 			}
-
 		}
 	}()
 
+	// canal para almacenar la os.Signal
 	sigChan := make(chan os.Signal, 1)
+	// slice tipo os.Signal con algunas señales de respuestas especificadas
 	sig := []os.Signal{syscall.SIGTERM, syscall.SIGQUIT, syscall.SIGINT}
+	// capta la señal del sistema y la envia al canal sigChan
 	signal.Notify(sigChan, sig...)
 
-	// This is blocking read from
-	// sigChan where the Notify function sends
-	// the signal.
+	// Esto está bloqueando la lectura del codigo siguiente hasta que reciba el sigChan
+	// desde la función Notify, hasta tanto la go rutina continuara su bucle
 	<-sigChan
 
-	// After the signal is received
-	// all the code behind the read from channel could be
-	// considered as a cleanup.
-	// CLEANUP SECTION
+	// Después de recibir la señal todo el código detrás de la lectura del canal podría ser
+	// considerado como una limpieza. SECCIÓN DE LIMPIEZA
 	close(closeChan)
 	releaseAllResources()
 	fmt.Println("The application shut down gracefully")
