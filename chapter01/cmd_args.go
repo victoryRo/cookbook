@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-// Parameterize ...
+// Parameterize ... study
 func Parameterize() {
 	args := os.Args
 

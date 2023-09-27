@@ -6,7 +6,7 @@ import (
 	"os/exec"
 )
 
-// CallProcessExternal ...
+// CallProcessExternal ... study
 func CallProcessExternal() {
 	// ejecuta comando en la terminal desde go
 	prc := exec.Command("ls", "-a")
