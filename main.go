@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	chapter01.Parameterize()
+	chapter01.EnvVarTest()
 }
