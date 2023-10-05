@@ -13,8 +13,8 @@ import (
 // usarlo en la función flag.Var.
 type ArrayValue []string
 
-func (s *ArrayValue) String() string {
-	return fmt.Sprintf("%v", *s)
+func (a *ArrayValue) String() string {
+	return fmt.Sprintf("%v", *a)
 }
 
 // Set ...
@@ -23,7 +23,7 @@ func (a *ArrayValue) Set(s string) error {
 	return nil
 }
 
-// LearnFlag ...
+// LearnFlag ... study
 func LearnFlag() {
 	// Extrayendo valores de bandera con métodos que devuelven punteros
 	retry := flag.Int("retry", -1, "Defines max retry count")

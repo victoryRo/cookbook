@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	chapter01.EnvVarTest()
+	chapter01.LearnFlag()
 }
