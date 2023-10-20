@@ -7,8 +7,8 @@ import (
 	"strconv"
 )
 
-// GetProcessId ...
-func GetProcessId() {
+// GetProcessID ...
+func GetProcessID() {
 	pid := os.Getpid()
 
 	fmt.Printf("Process PID: %d\n", pid)

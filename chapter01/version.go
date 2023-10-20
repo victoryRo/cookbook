@@ -10,6 +10,7 @@ const info = `
     The binary was build by GO: %s
 `
 
+// GetInfo ...
 func GetInfo() {
 	fmt.Printf(info, "Example", runtime.Version())
 }
